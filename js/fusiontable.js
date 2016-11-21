@@ -2,7 +2,7 @@ $(document).ready(function(){
     
     var query = "";
     
-    function initialize() {
+    function displayMap() {
         google.maps.visualRefresh = true;
         var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
           (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
@@ -51,6 +51,11 @@ $(document).ready(function(){
         }
     }
     
+    function displayChart(){
+        var frame = '<iframe width="500" height="300" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col1%2C+col5%2C+col6+from+1WZkzM2NWeY_1KvLfUkibDJCl63IJBXcvYg6AWRGM+order+by+col1+asc+limit+100&amp;viz=GVIZ&amp;t=COLUMN&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;att=true&amp;width=500&amp;height=300"></iframe>';
+        document.getElementById("chart").innerHTML = frame;
+    }
+    
     var submitBtn = document.getElementById("submit");
     submitBtn.onclick = function(){            
         query = "";
@@ -77,10 +82,11 @@ $(document).ready(function(){
         }       
         
         alert(query);
-        initialize();
+        displayMap();
     }
     
-    initialize();
+    displayMap();
+    displayChart();
     //google.maps.event.addDomListener(window, 'load', initialize);
     
 });
