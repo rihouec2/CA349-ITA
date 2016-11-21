@@ -103,7 +103,7 @@
             </div>
         </div>
         
-        <div class="row">
+        <!--div class="row">
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
@@ -114,7 +114,7 @@
                     <center><iframe width="700" height="500" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col1+from+1WZkzM2NWeY_1KvLfUkibDJCl63IJBXcvYg6AWRGM+where+col5+%3E%3D+3000+and+col5+%3C%3D+4000&amp;viz=MAP&amp;h=false&amp;lat=53.71924796651665&amp;lng=-6.199967296875002&amp;t=1&amp;z=7&amp;l=col1&amp;y=2&amp;tmplt=2&amp;hml=ONE_COL_LAT_LNG"></iframe></center>
                </div>
             </div>
-        </div>
+        </div-->
         
         <div class="row">
             <div class="box">
@@ -123,58 +123,26 @@
                     <h2 class="intro-text text-center">
                         <strong>Queries</strong>
                     </h2>
-                    <hr>
-                    <form role="form">
-                        <div class="row">
-                            <div class="form-group col-lg-4">
-                                <label>Name</label>
-                                <input type="text" class="form-control">
-                            </div>                            
-                            <div class="form-group col-lg-12">
-                                <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="dropdown">
-                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Year
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">All</a></li>  
-                        <li><a href="#">2016</a></li>
-                        <li><a href="#">2015</a></li>
-                        <li><a href="#">2014</a></li>
-                        <li><a href="#">2013</a></li>
-                        <li><a href="#">2012</a></li>
-                        <li><a href="#">2011</a></li>
-                        <li><a href="#">2010</a></li>
-                        <li><a href="#">2009</a></li>
-                        <li><a href="#">2008</a></li>                                
-                      </ul>
-                    </div>
-                    <div class="dropdown">
-                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Month
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">All</a></li>  
-                        <li><a href="#">January</a></li>
-                        <li><a href="#">February</a></li>
-                        <li><a href="#">March</a></li>
-                        <li><a href="#">April</a></li>
-                        <li><a href="#">May</a></li>
-                        <li><a href="#">June</a></li>
-                        <li><a href="#">July</a></li>
-                        <li><a href="#">August</a></li>
-                        <li><a href="#">September</a></li> 
-                        <li><a href="#">October</a></li>
-                        <li><a href="#">November</a></li>
-                        <li><a href="#">December</a></li>  
-                      </ul>
-                    </div>
+                    <hr>                    
+                    <center><form class="form-inline">                               
+                        <select class="form-control date"> 
+                            <option value="">Date</option>
+                            <option value="col5">February 2008</option>
+                            <option value="col6">March 2008</option>
+                            <option value="col7">April 2008</option>
+                            <option value="col8">May 2008</option>
+                            <option value="col9">June 2008</option>
+                            <option value="col10">July 2008</option>
+                            <option value="col11">August 2008</option>
+                            <option value="col12">September 2008</option>
+                            <option value="col13">October 2008</option>
+                            <option value="col14">November 2008</option>
+                            <option value="col15">December 2008</option>
+                        </select>&nbsp;
+                        <input type="text" class="form-control" id="min" placeholder="Minimum value">
+                        <input type="text" class="form-control" id="max" placeholder="Maximum value">
+                        <button type="button" id="submit" class="btn btn-default">Submit</button>
+                    </form></center>
                 </div>
             </div>
         </div>
