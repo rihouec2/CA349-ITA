@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fusion Tables Project">
+    <meta name="author" content="Cindy&Thibault">
+
+    <title>Fusion Tables Project</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Google Maps with API key -->
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAH3JiCLz-JTHiDwwYuxUcbYduLQV86ThE&language=en&v=3"></script> 
+    
+    <!-- Fusion Table (main javascript for the website) -->
+    <script src="js/fusiontable.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="brand">Fusion Tables Project</div>
+    <div class="address-bar"><b>CA349 | IT Architecture | DCU</b></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+
+        <!-- Introduction -->
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">                   
+                    <h2 class="brand-before  text-center">
+                        <small>Welcome to</small>
+                    </h2>
+                    <h1 class="brand-name  text-center">Fusion Tables Project</h1>
+                    <hr class="tagline-divider">
+                    <h2 class="text-center">
+                        <small>By
+                            <strong>Thibault Desfontaines & Cindy Rihouey</strong>
+                        </small>
+                    </h2>
+                    <p>This webpage displays original variables from the CSO regarding All Persons and Persons Aged Under 25 years who are signing on the Live Register in 124 Social Welfare Offices in the Republic of Ireland.</p>
+                    <p>Data is available on a yearly basis from 2009 to 2015.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Map</strong>
+                    </h2>
+                    <h2 class="intro-text text-center">Persons Aged Under 25 / All Persons</h2>
+                    <hr>
+                    <center>
+                        <!-- Map Canvas -->
+                        <div id="googft-mapCanvas"></div>&nbsp;
+                        <!-- Query -->
+                        <form class="form-inline">
+                            <select class="form-control type"> 
+                                    <option value="0">All</option>
+                                    <option value="1">Under 25</option>
+                            </select>&nbsp;
+                            <select class="form-control year"> 
+                                    <option value="col5">2009</option>
+                                    <option value="col6">2010</option>
+                                    <option value="col7">2011</option>
+                                    <option value="col8">2012</option>
+                                    <option value="col9">2013</option>
+                                    <option value="col10">2014</option>
+                                    <option value="col11">2015</option>
+                            </select>&nbsp;&nbsp;&nbsp;&nbsp;
+                            Min&nbsp;<input type="number" class="form-control" id="min" min="0" max="500000" value="0">&nbsp;
+                            Max&nbsp;<input type="number" class="form-control" id="max" min="0" max="500000" value="500000">&nbsp;                        
+                            <button type="button" id="submit" class="btn btn-default">Submit</button>&nbsp;
+                            <button type="button" id="reset" class="btn btn-default">Reset</button>
+                        </form>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Column Chart</strong>
+                    </h2>
+                    <h2 class="intro-text text-center">All Persons & Persons Aged Under 25 from 2009 to 2015</h2>
+                    <hr>
+                    <center>
+                        <!-- Chart Canvas -->
+                        <div id="chart"></div>
+                        <!-- Query -->
+                        <form class="form-inline">
+                            City&nbsp;&nbsp;<select class="form-control" id="city"> 
+                                <option>Achill</option>
+                                <option>Apollo House (Tara Street)</option>
+                                <option>Ardee</option>
+                                <option>Arklow</option>
+                                <option>Athlone</option>
+                                <option>Athy</option>
+                                <option>Balbriggan</option>
+                                <option>Ballina</option>
+                                <option>Ballinasloe</option>
+                                <option>Ballinrobe</option>
+                                <option>Ballybofey</option>
+                                <option>Ballyconnell</option>
+                                <option>Ballyfermot</option>
+                                <option>Ballymun</option>
+                                <option>Ballyshannon</option>
+                                <option>Baltinglass</option>
+                                <option>Bandon</option>
+                                <option>Bantry Comb</option>
+                                <option>Belmullet</option>
+                                <option>Birr</option>
+                                <option>Bishop Square</option>
+                                <option>Blanchardstown</option>
+                                <option>Boyle</option>
+                                <option>Bray</option>
+                                <option>Buncrana</option>
+                                <option>Caherciveen</option>
+                                <option>Cahir</option>
+                                <option>Carlow</option>
+                                <option>Carrick-On-Shannon</option>
+                                <option>Carrick-On-Suir</option>
+                                <option>Carrickmacross</option>
+                                <option>Carrigaline</option>
+                                <option>Cashel</option>
+                                <option>Castlebar</option>
+                                <option>Castleblayney</option>
+                                <option>Castlepollard</option>
+                                <option>Castlerea</option>
+                                <option>Cavan</option>
+                                <option>Claremorris</option>
+                                <option>Clifden</option>
+                                <option>Clonakilty</option>
+                                <option>Clondalkin</option>
+                                <option>Clones</option>
+                                <option>Clonmel</option>
+                                <option>Cobh</option>
+                                <option>Coolock</option>
+                                <option>Cork City</option>
+                                <option>Cork Street</option>
+                                <option>Dingle</option>
+                                <option>Donegal</option>
+                                <option>Drogheda</option>
+                                <option>Dun Laoghaire</option>
+                                <option>Dundalk</option>
+                                <option>Dunfanaghy</option>
+                                <option>Dungarvan</option>
+                                <option>Dungloe</option>
+                                <option>Dunmanway</option>
+                                <option>Edenderry</option>
+                                <option>Ennis</option>
+                                <option>Enniscorthy</option>
+                                <option>Ennistymon</option>
+                                <option>Fermoy</option>
+                                <option>Finglas</option>
+                                <option>Galway City</option>
+                                <option>Gorey</option>
+                                <option>Gort</option>
+                                <option>Kells</option>
+                                <option>Kenmare</option>
+                                <option>Kilbarrack</option>
+                                <option>Kilkenny</option>
+                                <option>Killarney</option>
+                                <option>Killorglin</option>
+                                <option>Killybegs</option>
+                                <option>Kilmallock</option>
+                                <option>Kilrush</option>
+                                <option>Kings Inn Street</option>
+                                <option>Kinsale</option>
+                                <option>Letterkenny</option>
+                                <option>Limerick City</option>
+                                <option>Listowel</option>
+                                <option>Longford</option>
+                                <option>Loughrea</option>
+                                <option>Macroom</option>
+                                <option>Mallow</option>
+                                <option>Manorhamilton</option>
+                                <option>Maynooth</option>
+                                <option>Midleton</option>
+                                <option>Monaghan</option>
+                                <option>Muine Bheag (Bagenalstown)</option>
+                                <option>Mullingar</option>
+                                <option>Names</option>
+                                <option>Navan</option>
+                                <option>Navan Road</option>
+                                <option>Nenagh</option>
+                                <option>New Ross</option>
+                                <option>Newbridge</option>
+                                <option>Newcastle West</option>
+                                <option>Newmarket</option>
+                                <option>Nth Cumberland Street</option>
+                                <option>Nutgrove (Rathfarnham)</option>
+                                <option>Portarlington</option>
+                                <option>Portlaoise</option>
+                                <option>Rathdowney</option>
+                                <option>Roscommon</option>
+                                <option>Roscrea</option>
+                                <option>Skibbereen</option>
+                                <option>Sligo</option>
+                                <option>Swinford</option>
+                                <option>Swords</option>
+                                <option>Tallaght</option>
+                                <option>Thomas Street</option>
+                                <option>Thomastown</option>
+                                <option>Thurles</option>
+                                <option>Tipperary</option>
+                                <option>Tralee</option>
+                                <option>Trim</option>
+                                <option>Tuam</option>
+                                <option>Tubbercurry</option>
+                                <option>Tulla</option>
+                                <option>Tullamore</option>
+                                <option>Tullow</option>
+                                <option>Waterford City</option>
+                                <option>Westport</option>
+                                <option>Wexford</option>
+                                <option>Wicklow</option>
+                                <option>Youghal</option>
+                            </select>
+                        </form>
+                    </center>
+                </div>
+            </div>
+        </div>   
+        
+    </div>
+
+    <!-- Copyright -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>   
+
+</body>
+
+</html>
